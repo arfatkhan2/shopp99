@@ -1,3 +1,4 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #80afbe;
@@ -9,24 +10,27 @@ h1, h2 {
     text-align: center;
 }
 
-#product-list {
-    width: 80%;
-    margin: 20px auto;
-    padding: 20px;
+/* Header styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align content */
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+header img {
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
 }
 
-#cart {
-    width: 80%;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-}
-
+/* Product list styles */
 #product-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+    align-items: stretch; /* Ensure equal height for product cards */
 }
 
 .product-card {
@@ -38,37 +42,31 @@ h1, h2 {
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
-    width: 200px;
+    width: calc(33.33% - 20px);
+    max-width: 300px;
     text-align: center;
 }
 
 .product-card img {
-    max-width: 150px;
-    margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 5px;
 }
 
 .product-card span {
     margin: 5px 0;
 }
 
-button {
-    padding: 5px 10px;
-    border: none;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
+/* Cart styles */
+#cart {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #fff;
 }
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#cart-items {
-    list-style-type: none;
-    padding: 0;
-}
-/* Existing CSS styles */
 
 #cart-items li {
     display: flex;
@@ -89,45 +87,28 @@ button:hover {
 .cart-item-actions {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
 }
 
 .cart-item-actions select {
-    margin-right: 50px; /* Adjust the margin as needed */
+    margin-right: 10px;
+    margin-bottom: 5px; /* Add bottom margin for better spacing between buttons */
     padding: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-
-.product-image {
-    width: 150px; /* Set the width */
-    height: 150px; /* Set the height */
-    border-radius: 10px; /* Apply rounded corners */
-    object-fit: cover; /* Ensure the image fills the container without stretching */
+/* Buttons styles */
+button {
+    margin-bottom: 5px; /* Add bottom margin for better spacing between buttons */
+    padding: 5px 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-
-
-.product-card,
-#cart {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adjust the shadow properties as needed */
-    border-radius: 10px; /* Add border-radius for rounded corners */
-    padding: 20px; /* Add padding for better spacing */
-}
-
-
-
-
-header {
-    display: flex;
-    align-items: center;
-    padding: 20px; /* Add padding for spacing */
-    background-color: #ffffff; /* Optional: Add background color to header */
-    border-radius: 20px;
-}
-
-header img {
-    width: 100px; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 20px; /* Add spacing between logo and title */
+button:hover {
+    background-color: #0056b3;
 }

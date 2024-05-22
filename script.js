@@ -1,30 +1,20 @@
 let cart = [];
 
 // Add to Cart
-// Add to Cart
 function addToCart(product) {
-    // Calculate total quantity of items in the cart
     const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
-
-    // Check if adding the new product exceeds the limit of 100 items
     if (totalQuantity + 1 > 100) {
         console.log("Cannot add more than 100 items to the cart.");
-        return; // Exit function if cart limit is reached
+        return;
     }
-
-    // Check if the cart already contains the product
     const existingProduct = cart.find(item => item.id === product.id);
     if (existingProduct) {
-        // Increment quantity if product already exists
         existingProduct.quantity += 1;
     } else {
-        // Add new product to cart if it doesn't exist
         cart.push({ ...product, quantity: 1 });
     }
-
     updateCart();
 }
-
 
 // Remove from Cart
 function removeFromCart(productId, quantity) {
@@ -74,18 +64,15 @@ function clearCart() {
     updateCart();
 }
 
-// Update Cart (Helper function to update cart display)
+// Update Cart
 function updateCart() {
     const cartItems = document.getElementById('cart-items');
     cartItems.innerHTML = '';
-
     cart.forEach(product => {
         const li = document.createElement('li');
         li.classList.add('cart-item');
-
         const quantityOptions = Array.from({ length: product.quantity }, (_, i) => i + 1)
             .map(qty => `<option value="${qty}">${qty}</option>`).join('');
-
         li.innerHTML = `
             <div class="cart-item-details">
                 ${product.name} - ₹${product.price} x ${product.quantity}
@@ -97,10 +84,8 @@ function updateCart() {
                 <button onclick="handleRemove(${product.id})">Remove</button>
             </div>
         `;
-
         cartItems.appendChild(li);
     });
-
     document.getElementById('total-price').innerText = calculateTotalPrice();
     document.getElementById('average-price').innerText = calculateAveragePrice();
 }
@@ -111,18 +96,15 @@ function handleRemove(productId) {
     removeFromCart(productId, quantity);
 }
 
-// Display Cart (Helper function to display filtered cart)
+// Display Cart
 function displayCart(filteredCart) {
     const cartItems = document.getElementById('cart-items');
     cartItems.innerHTML = '';
-
     filteredCart.forEach(product => {
         const li = document.createElement('li');
         li.classList.add('cart-item');
-
         const quantityOptions = Array.from({ length: product.quantity }, (_, i) => i + 1)
             .map(qty => `<option value="${qty}">${qty}</option>`).join('');
-
         li.innerHTML = `
             <div class="cart-item-details">
                 ${product.name} - ₹${product.price} x ${product.quantity}
@@ -134,13 +116,10 @@ function displayCart(filteredCart) {
                 <button onclick="handleRemove(${product.id})">Remove</button>
             </div>
         `;
-
         cartItems.appendChild(li);
     });
-
     const totalPrice = filteredCart.reduce((total, product) => total + product.price * product.quantity, 0);
     const averagePrice = filteredCart.length > 0 ? (totalPrice / filteredCart.length).toFixed(2) : 0;
-
     document.getElementById('total-price').innerText = totalPrice;
     document.getElementById('average-price').innerText = averagePrice;
 }

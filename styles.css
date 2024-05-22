@@ -18,6 +18,8 @@ header {
     padding: 10px;
     background-color: #ffffff;
     border-radius: 20px;
+    margin: 0 auto 20px; /* Add margin for top and bottom, and auto for left and right to center horizontally */
+    max-width: 800px; /* Limit header width */
 }
 header img {
     width: 80px;
@@ -31,6 +33,8 @@ header img {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: stretch; /* Ensure equal height for product cards */
+    margin: 0 auto 20px; /* Add margin for top and bottom, and auto for left and right to center horizontally */
+    max-width: 800px; /* Limit product list width */
 }
 
 .product-card {
@@ -42,8 +46,8 @@ header img {
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
-    width: calc(33.33% - 20px);
-    max-width: 300px;
+    width: calc(33.33% - 20px); /* Adjust width with margins */
+    max-width: 300px; /* Limit product card width */
     text-align: center;
 }
 
@@ -61,7 +65,7 @@ header img {
 #cart {
     width: 100%;
     max-width: 400px;
-    margin: 20px auto;
+    margin: 0 auto 20px; /* Add margin for top and bottom, and auto for left and right to center horizontally */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;

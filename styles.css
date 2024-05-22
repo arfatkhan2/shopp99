@@ -133,14 +133,40 @@ button:hover {
     margin-bottom: 10px; /* Add bottom margin for spacing */
 }
 
+/* Cart styles */
+#cart {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto; /* Maintain gap from top and bottom, center horizontally */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+
 
 /* Cart styles */
 #cart {
     width: 100%;
     max-width: 400px;
-    margin: 20px auto; /* Add equal margin from top and bottom, and auto for left and right to center horizontally */
+    margin: 20px auto; /* Maintain gap from top and bottom, center horizontally */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+#cart-items {
+    padding: 0; /* Reset padding */
+    margin: 0; /* Reset margin */
+}
+
+/* Adjust the content area within the cart */
+.cart-content {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items horizontally */
 }

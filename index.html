@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="Your Logo">
+        <h1>Shopping Cart</h1>
+    </header>
+    <h2>Products</h2>
+    <div id="product-list">
+        
+        <div class="product-card" data-id="1" data-name="T-Shirt" data-price="25" data-image="shirt.jpg">
+            <img src="uspolo.jpg" alt="T-Shirt" class="product-image">
+            <span>T-Shirt</span>
+            <span>₹25</span>
+            <button onclick="addToCart({id: 1, name: 'T-Shirt', price: 25, image: 'shirt.jpg'})">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="2" data-name="Socks" data-price="5" data-image="socks.jpg">
+            <img src="socks.jpg" alt="Socks" class="product-image">
+            <span>Socks</span>
+            <span>₹5</span>
+            <button onclick="addToCart({id: 2, name: 'Socks', price: 5, image: 'socks.jpg'})">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="3" data-name="Shoes" data-price="99" data-image="shoes.jpg">
+            <img src="dgg.jpg" alt="Shoes" class="product-image">
+            <span>Shoes</span>
+            <span>₹99</span>
+            <button onclick="addToCart({id: 3, name: 'Shoes', price: 99, image: 'shoes.jpg'})">Add to Cart</button>
+        </div>
+    </div>
+
+    <div id="cart">
+        <h2>Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total Price: ₹<span id="total-price">0</span></p>
+        <p>Average Price: ₹<span id="average-price">0</span></p>
+        <button onclick="sortCart('asc')">Sort Cart Ascending</button>
+        <button onclick="sortCart('desc')">Sort Cart Descending</button>
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="filterProducts(50)">Filter Products Below ₹50</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -61,16 +61,8 @@ header img {
     margin: 5px 0;
 }
 
-/* Cart styles */
-#cart {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto 20px; /* Add margin for top and bottom, and auto for left and right to center horizontally */
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-}
+
+
 
 #cart-items li {
     display: flex;
@@ -115,4 +107,40 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+
+
+/* Product card styles */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    width: calc(33.33% - 20px); /* Adjust width with margins */
+    max-width: 300px; /* Limit product card width */
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%; /* Ensure images fill the container */
+    height: 200px; /* Set a fixed height for the images */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    margin-bottom: 10px; /* Add bottom margin for spacing */
+}
+
+
+/* Cart styles */
+#cart {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto; /* Add equal margin from top and bottom, and auto for left and right to center horizontally */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
 }
